@@ -1,0 +1,30 @@
+name: Codacy Coverage Reporter
+
+on: ["push"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: build-and-test
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.20.6'
+      - name: Build
+        run: make build
+      - name: Test
+        run: make test
+      - name: Coverage
+        run: make cover 
+  codacy-coverage-reporter:
+    runs-on: ubuntu-latest
+    name: codacy-coverage-reporter
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run codacy-coverage-reporter
+        uses: codacy/codacy-coverage-reporter-action@v1
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: ./test/coverage.out
