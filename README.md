@@ -28,7 +28,7 @@ Below is a brief guide to get started with the `product-service-go` project.
 
 The directory structure for the project is organized as follows:
 
-\```tree
+```tree
 ├── cmd
 │   └── main.go
 ├── internal
@@ -41,7 +41,7 @@ The directory structure for the project is organized as follows:
 │   └── aggregates
 ├── Makefile
 ├── README.md
-\```
+```
 
 ### Description:
 
@@ -61,8 +61,8 @@ The directory structure for the project is organized as follows:
 
 You can build the project using the following command:
 
-\```bash
-go build -o product-service-go cmd/main.go
-\```
+```bash
+make build
+```
 
 For more instructions on debugging and development, please refer to the code snippets provided in previous sections.
