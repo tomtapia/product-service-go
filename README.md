@@ -1,7 +1,4 @@
 # Golang Example Servcice
-
-## About the project
-
 `product-service-go` is a golang project developed with Domain-Driven Design and Clean Architecture. It implements a product catalog with categories and images. Following best practices, it emphasizes maintainable, optimized, and clean code.
 
 ### API docs
